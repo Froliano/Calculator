@@ -1,0 +1,46 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1
+-- Généré le : mer. 03 avr. 2024 à 15:39
+-- Version du serveur : 10.4.32-MariaDB
+-- Version de PHP : 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `calculatrice`
+--
+CREATE DATABASE IF NOT EXISTS `calculatrice` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `calculatrice`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `calculs`
+--
+
+DROP TABLE IF EXISTS `calculs`;
+CREATE TABLE IF NOT EXISTS `calculs` (
+  `calcul` text NOT NULL,
+  `result` float NOT NULL,
+  `time` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'admin';
+GRANT SELECT, INSERT, DELETE ON `calculatrice`.* TO `admin`@`localhost`;
